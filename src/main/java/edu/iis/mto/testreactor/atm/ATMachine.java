@@ -55,7 +55,7 @@ public class ATMachine {
 
     private AuthorizationToken authorize(PinCode pin, Card card) throws ATMOperationException {
         try {
-            return bank.autorize(pin.getPIN(), card.getNumber());
+            return bank.authorize(pin.getPIN(), card.getNumber());
         } catch (AuthorizationException e) {
             throw new ATMOperationException(ErrorCode.AUTHORIZATION);
         }
